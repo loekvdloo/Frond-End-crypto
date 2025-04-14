@@ -1,0 +1,251 @@
+/* Basis layout en achtergrond */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Inter', 'Arial', sans-serif;
+}
+
+/* Zorg dat root/container altijd minstens volledige hoogte heeft */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Algemene koppen */
+h1, h2, h3 {
+  text-align: center;
+  color: #fff;
+  margin: 20px 0 10px;
+}
+
+/* Zoekbalk */
+input[type="text"] {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #111;
+  color: #fff;
+  width: 90%;
+  max-width: 400px;
+  font-size: 1rem;
+}
+
+/* Container voor crypto kaarten */
+.crypto-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+/* Kaarten zelf */
+.crypto-card {
+  background-color: #111;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.05);
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #222;
+  transition: transform 0.2s ease-in-out, border 0.2s;
+}
+
+.crypto-card:hover {
+  transform: scale(1.01);
+  border-color: #444;
+}
+
+.crypto-card h2 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.crypto-card div {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.crypto-change.positive {
+  color: #4caf50; /* groen */
+}
+.crypto-change.negative {
+  color: #f44336; /* rood */
+}
+
+/* Link naar detailpagina */
+.crypto-link {
+  align-self: start;
+  padding: 8px 15px;
+  background-color: #222;
+  color: #ddd;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  font-size: 0.9rem;
+  margin-left: 243px;
+}
+
+.crypto-link:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Buttons algemeen */
+button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Detailpagina stijl */
+.coin-detail {
+  background-color: #111;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid #222;
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: center;
+}
+
+.coin-detail p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #ccc;
+}
+
+.coin-detail a {
+  display: inline-block;
+  margin-top: 30px;
+  background-color: #222;
+  color: #ddd;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+.coin-detail a:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Favorieten component */
+.displayfavo{
+  display: flex;
+  flex-direction: column;
+}
+.favorite-coins {
+  max-width: 1000px;
+  margin: 20px auto 40px;
+  padding: 20px;
+}
+
+.favorite-coins .grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .favorite-coins .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .favorite-coins .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.favorite-coin {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+/* Fade in animatie */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header {
+  background-color: #1e1e2f;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #4ade80;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #a5f3fc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: white;
+}
+.footer {
+  background-color: #1e1e2f;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-top: 3px solid #4ade80;
+  margin-top: 4rem;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: #a5f3fc;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  color: white;
+}
